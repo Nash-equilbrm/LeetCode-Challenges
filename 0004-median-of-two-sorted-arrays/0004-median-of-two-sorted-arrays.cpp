@@ -22,4 +22,5 @@ public:
         int index = merged.size() - 1;
         return (size % 2 == 1) ? merged[index] : ((float)(merged[index] + merged[index - 1]))/2;
     }
+
 };
