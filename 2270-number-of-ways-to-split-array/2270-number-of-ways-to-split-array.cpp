@@ -2,13 +2,14 @@ class Solution {
 public:
     int waysToSplitArray(vector<int>& nums) {
         int cnt = 0;
-        vector<long long int> sum;
+        int sum = 0;
+        int leftSum = 0;
         for (auto & i : nums) {
-            if(sum.size() == 0) sum.emplace_back(i);
-            else sum.emplace_back(sum.back() + i);
+            sum += i;
         }
         for(int i = 0; i < nums.size() - 1; ++i){
-            if(sum[i] >= sum.back() - sum[i]) cnt++;
+            leftSum += nums[i];
+            if(leftSum >= sum - leftSum) cnt++;
         }
         return cnt;
     }
