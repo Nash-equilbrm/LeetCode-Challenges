@@ -4,7 +4,7 @@ public:
         int cnt = 0;
         long long int sum = 0;
         long long int leftSum = 0;
-        for (auto & i : nums) {
+        for (int & i : nums) {
             sum += i;
         }
         for(size_t i = 0; i < nums.size() - 1; ++i){
