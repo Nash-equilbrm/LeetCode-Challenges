@@ -8,7 +8,7 @@ public:
             sum += i;
             leftSum.emplace_back(sum);
         }
-        for(int i = 0; i < nums.size() - 1; ++i){
+        for(size_t i = 0; i < nums.size() - 1; ++i){
             if(leftSum[i] >= sum - leftSum[i]) cnt++;
         }
         return cnt;
