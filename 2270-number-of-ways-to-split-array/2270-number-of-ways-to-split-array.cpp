@@ -2,8 +2,8 @@ class Solution {
 public:
     int waysToSplitArray(vector<int>& nums) {
         int cnt = 0;
-        int sum = 0;
-        int leftSum = 0;
+        long long int sum = 0;
+        long long int leftSum = 0;
         for (auto & i : nums) {
             sum += i;
         }
