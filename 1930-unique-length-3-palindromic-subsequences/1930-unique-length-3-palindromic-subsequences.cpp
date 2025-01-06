@@ -5,16 +5,18 @@ public:
         string alphabet = "abcdefghijklmnopqrstuvwxyz";
         for(char& outside:alphabet){
             vector<int> o = findInString(s, outside);
-            count += (o.size() >= 3) ? 1 : 0;
             if(o.size() <= 0) continue;
+            count += (o.size() >= 3) ? 1 : 0;
             for(char& inside:alphabet){
                 if(inside == outside) continue;
                 vector<int> i = findInString(s, inside);
                 if(i.size() <= 0) continue;
-                count += (
-                    o.front() < i.front() && i.front() < o.back()
-                    || o.front() < i.back() && i.back() < o.back()
-                    ) ? 1 : 0;
+                for(int& i_index:i){
+                    if(i_index > o.front() && i_index < o.back()) {
+                        count++;
+                        break;
+                    }
+                }
             }
         }
         return count;
@@ -26,10 +28,5 @@ public:
             if(s[i] == c) res.emplace_back(i);
         }
         return res;
-    }
-
-    int getIndex(vector<int>& v, int i){
-        auto it = find(v.begin(), v.end(), i);
-        return it - v.begin();
     }
 };
