@@ -11,22 +11,19 @@ public:
                     st.push(c);
                     break;
                 case ')':
-                    if(st.size() > 0 && st.top() == '(') {
+                    if(st.size() > 0 && st.top() == '(')
                         st.pop();
                         break;
-                    }
                     return false;
                 case ']':
-                    if(st.size() > 0 && st.top() == '[') {
+                    if(st.size() > 0 && st.top() == '[')
                         st.pop();
                         break;
-                    }
                     return false;
                 case '}':
-                    if(st.size() > 0 && st.top() == '{') {
+                    if(st.size() > 0 && st.top() == '{')
                         st.pop();
                         break;
-                    }
                     return false;
             }
             ++i;
