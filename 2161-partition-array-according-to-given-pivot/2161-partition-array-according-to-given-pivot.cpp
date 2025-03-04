@@ -4,14 +4,12 @@ public:
         vector<int> less;
         vector<int> greater;
         vector<int> equal;
-        for(auto i: nums){
-            if(i < pivot){
+        for (auto i : nums) {
+            if (i < pivot) {
                 less.push_back(i);
-            }
-            else if(i > pivot){
+            } else if (i > pivot) {
                 greater.push_back(i);
-            }
-            else if(i == pivot){
+            } else if (i == pivot) {
                 equal.push_back(i);
             }
         }
