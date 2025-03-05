@@ -5,18 +5,10 @@ public:
         int blue = nums.size() - 1;
         for(int i = 0 ; i < nums.size(); ++i){
             if(nums[i] == 0 && i > red){
-                int tmp = nums[i];
-                nums[i] = nums[red];
-                nums[red] = tmp;
-                red++;
-                i--;
+                swap(nums[red++], nums[i--]);
             }
             else if(nums[i] == 2 && i < blue){
-                int tmp = nums[i];
-                nums[i] = nums[blue];
-                nums[blue] = tmp;
-                blue--;
-                i--;
+                swap(nums[blue--], nums[i--]);
             }
         }
     }
