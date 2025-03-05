@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Boyer–Moore majority vote algorithm
     int majorityElement(vector<int>& nums) {
         int vote = 0;
         int cur = -1000000001;
