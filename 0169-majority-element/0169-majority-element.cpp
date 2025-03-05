@@ -2,16 +2,13 @@ class Solution {
 public:
     // Boyer–Moore majority vote algorithm
     int majorityElement(vector<int>& nums) {
-        int vote = 0;
-        int cur = -1000000001;
-        for(int i = 0 ; i < nums.size(); ++i){
-            if(vote == 0){
-                cur = nums[i];
-                vote++;
+        int candidate = 0, vote = 0;
+        for (int num : nums) {
+            if (vote == 0) {
+                candidate = num;
             }
-            else if(nums[i] == cur) vote++;
-            else if(nums[i] != cur) vote--;
+            vote += (num == candidate) ? 1 : -1;
         }
-        return cur;
+        return candidate;
     }
 };
