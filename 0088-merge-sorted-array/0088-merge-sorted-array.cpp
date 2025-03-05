@@ -15,11 +15,14 @@ public:
             }
             p--;
         }
+        /*
+        // no need to move nums1 to nums1 because we already sorting on it
         while(p1 >= 0){
             nums1[p] = nums1[p1];
             p1--;
             p--;
         }
+        */
 
         while(p2 >= 0){
             nums1[p] = nums2[p2];
