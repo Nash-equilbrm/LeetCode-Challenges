@@ -10,6 +10,8 @@ public:
             else if(nums[i] == 2 && i < blue){
                 swap(nums[blue--], nums[i--]);
             }
+
+            // at this point should stop iterating
             else if(nums[i] == 2 && i >= blue){
                 return;
             }
