@@ -10,6 +10,9 @@ public:
             else if(nums[i] == 2 && i < blue){
                 swap(nums[blue--], nums[i--]);
             }
+            else if(nums[i] == 2 && i >= blue){
+                return;
+            }
         }
     }
 };
